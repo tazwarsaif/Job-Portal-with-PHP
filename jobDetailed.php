@@ -6,6 +6,10 @@ if (!isset($_SESSION['uid']) || !isset($_SESSION['type'])) {
     header("Location: login.php");
     exit;
 }
+if ($_SESSION['type'] != 'recruiter') {
+    header("Location: login.php");
+    exit;
+}
 $uid = $_SESSION['uid'];
 $type = $_SESSION['type'];
 
